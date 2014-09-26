@@ -33,6 +33,9 @@ tape('Match', function (t) {
 
 tape('Multiple exclusions', function (t) {
   var patterns = [
+    // match all files
+    '**/*',
+
     // exclude everything in foo/
     '!**/foo/**',
 

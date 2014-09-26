@@ -1,7 +1,7 @@
 var minimatch = require('minimatch');
 
 module.exports = function minimatchAll (path, patterns, opts) {
-  var match = true;
+  var match = false;
 
   patterns.forEach(function (pattern) {
     var isExclusion = pattern[0] === '!';
