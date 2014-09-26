@@ -1,13 +1,16 @@
 var minimatch = require('minimatch');
 
 module.exports = function minimatchAll (path, patterns, opts) {
-  var match = false;
+  var match = true;
 
   patterns.forEach(function (pattern) {
-    // if we've already got a match, only re-test for exclusions
-    if (match === true && pattern[0] !== '!') { return; }
+    var isExclusion = pattern[0] === '!';
 
-      match = minimatch(path, pattern, opts);
+    // If we've got a match, only re-test for exclusions.
+    // if we don't have a match, only re-test for inclusions.
+    if (match !== isExclusion) { return; }
+
+    match = minimatch(path, pattern, opts);
   });
   return match;
 };

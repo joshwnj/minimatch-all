@@ -30,3 +30,30 @@ tape('Match', function (t) {
 
   t.end();
 });
+
+tape('Multiple exclusions', function (t) {
+  var patterns = [
+    // exclude everything in foo/
+    '!**/foo/**',
+
+    // and also exclude everything in bar/
+    '!**/bar/**'
+  ];
+
+  t.equals(
+    minimatchAll('important.exe', patterns),
+    true,
+    'Match all files');
+
+  t.equals(
+    minimatchAll('foo/one.js', patterns),
+    false,
+    'But exclude files in foo/');
+
+  t.equals(
+    minimatchAll('bar/two.js', patterns),
+    false,
+    'And exlude files in bar/ as well');
+
+  t.end();
+});
