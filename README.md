@@ -1,6 +1,8 @@
 minimatch-all
 ====
 
+[![Build Status](https://secure.travis-ci.org/joshwnj/minimatch-all.png)](http://travis-ci.org/joshwnj/minimatch-all)
+
 `minimatch` a path against multiple patterns.
 
 Install
