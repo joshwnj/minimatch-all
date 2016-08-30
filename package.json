@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/joshwnj/minimatch-all",
   "dependencies": {
-    "minimatch": "^1.0.0"
+    "minimatch": "^3.0.2"
   },
   "devDependencies": {
     "tape": "^3.0.0"
